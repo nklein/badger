@@ -1,0 +1,138 @@
+<html>
+  <head>
+    <title>Badge Creation Form</title>
+    <style>
+     body {
+         margin: 0;
+         padding: 0;
+         background-color: #ff0000;
+     }
+
+     body, input {
+         font-size: 18pt;
+     }
+
+     input[type="file"] {
+         font-size: 8pt;
+     }
+
+     h1 {
+         text-align: center;
+         border-bottom: solid black 3pt;
+     }
+
+     body > div {
+         margin: auto;
+         width: 640px;
+         background-color: #ffffcc;
+         margin-top: 0.25in;
+         padding: 0.25in;
+     }
+
+     form > div {
+         margin-top: 0.25in;
+     }
+
+     div > input {
+         width: 100%;
+     }
+
+     ul.badge-chooser {
+         list-style-type: none;
+         white-space: nowrap;
+         overflow-x: auto;
+     }
+     ul.badge-chooser > li {
+         display: inline;
+         margin-right: 0.25in;
+     }
+     ul.badge-chooser > li > img {
+         vertical-align: middle;
+         height: 1.5in;
+     }
+
+     #submit {
+         margin-top: 0.5in;
+     }
+
+     .custom-file-input {
+         padding-left: 1in;
+     }
+     .custom-file-input::-webkit-file-upload-button {
+         visibility: hidden;
+     }
+     .custom-file-input::before {
+         content: 'Take Photo';
+         margin-left: -1in;
+         display: inline-block;
+         background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+         border: 1px solid #999;
+         border-radius: 3px;
+         padding: 5px 8px;
+         outline: none;
+         white-space: nowrap;
+         -webkit-user-select: none;
+         cursor: pointer;
+         text-shadow: 1px 1px #fff;
+         font-weight: 700;
+         font-size: 10pt;
+     }
+     .custom-file-input:hover::before {
+         border-color: black;
+     }
+     .custom-file-input:active::before {
+         background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+     }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Badge Creator</h1>
+      <form enctype="multipart/form-data" action="/print-badge" method="post">
+        <div>
+          <input type="text" name="name" id="name" value="Dr. Weird"/>
+        </div>
+        <div>
+          <input type="text" name="department" id="department"
+                 value="Biology Department"/>
+        </div>
+        <div>
+          <input type="text" name="division" id="division"
+                 value="Research and Development"/>
+        </div>
+        <div>
+          <ul class="badge-chooser">
+            <li>
+              <input type="radio" name="overlay" value="umbrella"
+                     checked="checked" />
+              <img src="overlays/umbrella.png"
+                   alt="Horizontal Umbrella Corp Badge with Fingerprint" />
+            </li>
+            <li>
+              <input type="radio" name="overlay" value="arkham" />
+              <img src="overlays/arkham.png"
+                   alt="Horizontal Arkham Badge" />
+            </li>
+            <li>
+              <input type="radio" name="overlay" value="cdc" />
+              <img src="overlays/cdc.png"
+                   alt="Vertical Quarantine Badge" />
+            </li>
+            <li>
+              <input type="radio" name="overlay" value="umbrella-nofingerprint" />
+              <img src="overlays/umbrella-nofingerprint.png"
+                   alt="Horizontal Umbrella Corp Badge without Fingerprint" />
+            </li>
+          </ul>
+        </div>
+        <div>
+          <input type="file" accept="image/jpeg" capture="camera"
+                 name="photo" class="custom-file-input"/>
+        </div>
+        <div id="submit">
+          <input type="Submit" name="Print Badge"/>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

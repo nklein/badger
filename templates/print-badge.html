@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <title>Print Your Badge</title>
+    <style>
+     body {
+         margin: 0;
+         padding: 0;
+         width: 8in;
+         height: 8in;
+     }
+     div.page {
+         margin: auto;
+         margin-top: 1in;
+     }
+     div.page,
+     img.badge {
+         max-height: 4in;
+         max-width: 4in;
+     }
+     div.badge {
+         position: relative;
+         top: 0;
+         left: 0;
+     }
+     div.badge > p {
+         position: absolute;
+     }
+     div.instructions {
+         margin-top: 1in;
+         font-size: 150%;
+     }
+     @media print {
+         div.non-printable {
+             display: none;
+         }
+     }
+    </style>
+    <link href="style/<!-- TMPL_VAR overlay -->.css"
+          rel="stylesheet"
+          type="text/css"/>
+  </head>
+  <body>
+    <div class="page">
+      <div class="badge">
+        <img class="badge" src="images/<!-- TMPL_VAR badge -->" />
+        <p id="name"><!-- TMPL_VAR name --></p>
+        <p id="department"><!-- TMPL_VAR department --></p>
+        <p id="division"><!-- TMPL_VAR division --></p>
+      </div>
+      <div class="non-printable instructions">
+        <a href="/">Click here to generate a new badge</a>
+      </p>
+    </div>
+    <script>window.print()</script>
+  </body>
+</html>

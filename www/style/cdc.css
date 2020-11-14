@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Special+Elite');
+@import url('https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text');
+
+div.badge p {
+    font-family: sans-serif;
+}
+
+#name {
+    font-family: 'Special Elite', monospace;
+    width: 49%;
+    text-align: center;
+    left: 7%;
+    top: 65%;
+    font-size: 170%;
+    font-weight: bold;
+}
+
+#department {
+    font-family: 'Libre Barcode 39 Text', sans-serif;
+    width: 25%;
+    left: 35%;
+    top: 49%;
+    font-size: 120%;
+}
+
+#division {
+    width: 25%;
+    left: 35%;
+    top: 62%;
+    font-size: 70%;
+}

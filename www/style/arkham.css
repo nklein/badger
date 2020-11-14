@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Audiowide');
+
+
+div.badge p {
+    font-family: 'Audiowide', cursive;
+}
+
+#name {
+    left: 34%;
+    top: 35%;
+    font-weight: bold;
+}
+
+#department {
+    text-align: right;
+    width: 46%;
+    left: 50%;
+    top: 20%;
+    font-size: 65%;
+}
+
+#division {
+    text-align: right;
+    width: 46%;
+    left: 50%;
+    top: 27%;
+    font-size: 45%;
+}
